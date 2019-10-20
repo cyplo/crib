@@ -16,5 +16,7 @@ stdenv.mkDerivation rec {
     python37Packages.click
     python37Packages.click-log
     python37Packages.cffi
+    python37Packages.pyyaml
+    mongodb-compass
   ];
 }
