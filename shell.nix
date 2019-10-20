@@ -18,7 +18,7 @@ let
       wsproto
       typing-extensions
       h11
-      ];
+    ];
     meta = {
       homepage = "https://gitlab.com/pgjones/hypercorn/";
       description = "Hypercorn is an ASGI Server based on Hyper libraries and inspired by Gunicorn.";
@@ -40,10 +40,10 @@ let
       itsdangerous
       multidict
       sortedcontainers
-        blinker
-        jinja2
-        aiofiles
-      ];
+      blinker
+      jinja2
+      aiofiles
+    ];
     meta = {
       homepage = "https://gitlab.com/pgjones/quart";
       description = "Quart is a Python ASGI web microframework.";
@@ -61,7 +61,7 @@ let
     doCheck = false;
     propagatedBuildInputs = with python37Packages; [
       quart
-      ];
+    ];
     meta = {
       homepage = "https://gitlab.com/pgjones/quart";
       description = "Quart is a Python ASGI web microframework.";
@@ -71,21 +71,21 @@ in
   stdenv.mkDerivation rec {
     name = "env";
     env = buildEnv { name = name; paths = buildInputs; };
-    buildInputs = [
+    buildInputs = with python37Packages; [
       python
-      python37Packages.virtualenv
-      python37Packages.pip
-      python37Packages.setuptools
-      python37Packages.shapely
-      python37Packages.scrapy
-      python37Packages.scipy
-      python37Packages.matplotlib
-      python37Packages.numpy
-      python37Packages.geopandas
-      python37Packages.click
-      python37Packages.click-log
-      python37Packages.cffi
-      python37Packages.pyyaml
+      virtualenv
+      pip
+      setuptools
+      shapely
+      scrapy
+      scipy
+      matplotlib
+      numpy
+      geopandas
+      click
+      click-log
+      cffi
+      pyyaml
       mongodb-compass
       quart
       quart_cors
